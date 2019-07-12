@@ -1,0 +1,43 @@
+
+<%= form_with(model: pickup, local: true) do |form| %>
+  <% if pickup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pickup.errors.count, "error") %> prohibited this pickup from being saved:</h2>
+
+      <ul>
+      <% pickup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <h4><%= form.label :Name %></h4>
+      <%= form.text_field :full_name %>  
+  </div>
+
+  <div class="field">
+      <h4><%= form.label :Mobile %></h4>
+      <%= form.text_field :phone %>  
+  </div>
+
+  <div class="field">
+    <h4><%= form.label :source %></h4>
+    <%= form.text_field :source, id: :pickup_source %>
+  </div>
+
+  <div class="field">
+    <h4><%= form.label :destination %></h4>
+    <%= form.text_field :destination, id: :pickup_destination %>
+  </div>
+
+  <div class="field">
+    <h4><%= form.label :departure_time %></h4>
+    <%= form.number_field :departure_time, id: :pickup_departure_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

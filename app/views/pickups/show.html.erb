@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @pickup.source %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @pickup.destination %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @pickup.departure_time %>
+</p>
+
+<%= link_to 'Edit', edit_pickup_path(@pickup) %> |
+<%= link_to 'Back', pickups_path %>
