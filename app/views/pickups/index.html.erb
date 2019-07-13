@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <%# <th>Passenger</th>
-      <th>Mobile</th> %>
+      <th>Passenger</th>
+      <th>Mobile</th>
       <th>Source</th>
       <th>Destination</th>
       <th>Departure time</th>
@@ -17,8 +17,8 @@
   <tbody>
     <% @pickups.each do |pickup| %>
       <tr>
-        <%# <td><%= pickup.user.full_name %></td> 
-        <%# <td><%= pickup.user.phone %></td> 
+        <td><%= pickup.user.full_name%></td> 
+        <td><%= pickup.user.phone %></td> 
         <td><%= pickup.source %></td>
         <td><%= pickup.destination %></td>
         <td><%= pickup.departure_time %></td>
