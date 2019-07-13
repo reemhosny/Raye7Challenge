@@ -13,13 +13,13 @@
     <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
       <ul>
-          <% if current_user.is_driver? %>
-            <li><%= link_to "New Trip", new_trip_path %></li>
-          <% else %>
-            <li><%= link_to "New Pickup", new_pickup_path %></li>
-          <% end %>
-          <li><%= link_to "Account" , edit_user_registration_path%></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path,:method => :delete %></li>
+        <% if current_user.driver? %>
+          <li><%= link_to "New Trip", new_trip_path %></li>
+        <% else %>
+          <li><%= link_to "New Pickup", new_pickup_path %></li>
+        <% end %>
+        <li><%= link_to "Account" , edit_user_registration_path%></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path,:method => :delete %></li>
       </ul>
       <% else %>
       <ul>

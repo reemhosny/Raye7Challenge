@@ -1,4 +1,7 @@
 class User < ApplicationRecord 
+
+  enum role: [:driver, :passenger]
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -9,6 +12,6 @@ class User < ApplicationRecord
 
   validates :full_name, :phone_number, presence: true
   validates_length_of :full_name, :minimum => 6
-  validates :phone, uniqueness:true
+  validates :phone_number, uniqueness:true
 
 end

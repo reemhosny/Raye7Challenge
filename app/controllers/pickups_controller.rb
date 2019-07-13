@@ -1,20 +1,20 @@
 class PickupsController < ApplicationController
   before_action :set_pickup, only: [:show, :edit, :update, :destroy]
-
   
   def index
     	if user_signed_in? 
-            if current_user.is_driver?
-               redirect_to :controller => 'trips', :action => 'index'
-            else
-            @pickups = Pickup.all
-            end
-        else
-        redirect_to user_session_path
-        end	
+          if current_user.driver?
+              redirect_to :controller => 'trips', :action => 'index'
+          else
+          @pickups = Pickup.all
+          end
+      else
+      redirect_to user_session_path
+      end	
   end
 
   def show
+
   end
 
   def new
@@ -28,7 +28,7 @@ class PickupsController < ApplicationController
 
   
   def create
-     @pickup = current_user.pickups.new(pickup_params)
+    @pickup = current_user.pickups.new(pickup_params)
       if @pickup.save
        redirect_to @pickup, notice: "Pickup added successful"
       else
@@ -40,10 +40,8 @@ class PickupsController < ApplicationController
     respond_to do |format|
       if @pickup.update(pickup_params)
         format.html { redirect_to @pickup, notice: 'Pickup was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pickup }
       else
         format.html { render :edit }
-        format.json { render json: @pickup.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +51,6 @@ class PickupsController < ApplicationController
     @pickup.destroy
     respond_to do |format|
       format.html { redirect_to pickups_url, notice: 'Pickup was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

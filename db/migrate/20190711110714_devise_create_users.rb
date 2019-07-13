@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :reset_password_sent_at
       t.string   :full_name
       t.string   :phone
-      t.string   :role
+      t.integer  :role
      
 
       ## Rememberable
