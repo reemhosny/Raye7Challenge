@@ -6,7 +6,7 @@ class PickupsController < ApplicationController
           if current_user.driver?
               redirect_to :controller => 'trips', :action => 'index'
           else
-          @pickups = Pickup.all
+              @pickups = current_user.pickups.all   
           end
       else
       redirect_to user_session_path

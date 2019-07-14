@@ -4,7 +4,7 @@ class TripsController < ApplicationController
  
   def index
     if user_signed_in? 
-		    if current_user.passenger?
+		    if current_user.driver?
 		    	@trips = current_user.trips.all
 		    else
 		    redirect_to :controller => 'pickups', :action => 'index'
@@ -28,9 +28,9 @@ class TripsController < ApplicationController
   def edit
   end
 
-  
   def create
     @trip = Trip.new(trip_params)
+    @trip.user_id=current_user.id
       if @trip.save
 			 redirect_to @trip, notice: "Trip added successful"
 			else
@@ -59,6 +59,8 @@ class TripsController < ApplicationController
   private
     def set_trip
       @trip = Trip.find(params[:id])
+      @source = Place.find_by_pickup_id(@trip.id)
+
     end
 
     def trip_params

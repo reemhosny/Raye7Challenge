@@ -11,12 +11,6 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <h4><%= f.label :Driver %></h4>
-    <p>Full name: <%= @trip.user.full_name %></p>
-    <p>Phone number: 0<%= @trip.user.phone_number %></p>
-  </div>
-
   <div class="field">
     <%= form.label :source %>
     <%= form.text_field :source, id: :trip_source %>
