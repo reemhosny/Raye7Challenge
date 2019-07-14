@@ -1,24 +1,10 @@
-# README
+A prototype version of Raye7 Web App built in Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Main Objects:
+   - Create authentication for users using devise gem.
+   - Give user role[driver, passenger].
+   - Give autherization to users.
+      * Passenger only who can create or delete pickup.
+      * Driver only who can create or delete trip.
+   -Using postgresql for  DBMS.
+   
