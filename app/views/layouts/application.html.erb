@@ -1,33 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Raye7chalange</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Raye7chalange" %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <%= javascript_include_tag "application" %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+    <![endif]-->
   </head>
-
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <ul>
-        <% if current_user.driver? %>
-          <li><%= link_to "New Trip", new_trip_path %></li>
-        <% else %>
-          <li><%= link_to "New Pickup", new_pickup_path %></li>
-        <% end %>
-        <li><%= link_to "Account" , edit_user_registration_path%></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path,:method => :delete %></li>
-      </ul>
-      <% else %>
-      <ul>
-         <li><%= link_to "Sign Up" ,new_user_registration_path %></li>
-         <li><%= link_to "Sign In" ,new_user_session_path %></li>
-      </ul>
-    <%end%>
 
-    <%= yield %>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Raye7</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "About", "/path1"  %></li>
+            <li><%= link_to "Business Solution", "/path2"  %></li>
+            <li><%= link_to "Press", "/path3"  %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3>Sidebar</h3>
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Raye7 2019</p>
+      </footer>
+
+    </div> <!-- /container -->
+
   </body>
 </html>

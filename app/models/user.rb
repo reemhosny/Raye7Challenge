@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :trips
 
 
-
   validates :full_name, :phone_number, presence: true
   validates_length_of :full_name, :minimum => 6
   validates :phone_number, uniqueness:true
