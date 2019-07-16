@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Passenger:</strong>
+  <%= @pickup.user.full_name %>
+</p>
+<p>
+  <strong>Mobile:</strong>
+  <%= @pickup.user.phone_number %>
+</p> 
 <p>
   <strong>Source:</strong>
   <%= @pickup.source %>

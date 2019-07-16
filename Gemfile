@@ -29,6 +29,11 @@ gem 'devise'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'devise-bootstrap-views', '~> 1.1'
+gem 'autoprefixer-rails'
+gem 'jquery-rails'
+gem 'bootsnap'
+gem 'rails-ujs'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

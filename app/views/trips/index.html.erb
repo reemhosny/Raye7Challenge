@@ -2,9 +2,11 @@
 
 <h1>Trips</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>Driver</th>
+      <th>Mobile</th>
       <th>Source</th>
       <th>Destination</th>
       <th>Departure time</th>
@@ -16,6 +18,8 @@
   <tbody>
     <% @trips.each do |trip| %>
       <tr>
+        <td><%= trip.user.full_name%></td>
+        <td><%= trip.user.phone_number%></td> 
         <td><%= trip.source %></td>
         <td><%= trip.destination %></td>
         <td><%= trip.departure_time %></td>
