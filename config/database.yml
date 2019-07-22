@@ -86,7 +86,7 @@ test:
 #
 production:
   <<: *default
-   url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   # database: Raye7chalange_production
   # username: Raye7chalange
   # password: <%= ENV['RAYE7CHALANGE_DATABASE_PASSWORD'] %>
