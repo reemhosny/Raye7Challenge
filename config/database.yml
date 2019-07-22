@@ -81,11 +81,12 @@ test:
 #
 # You can use this database configuration with:
 #
-   production:
-     url: <%= ENV['DATABASE_URL'] %>
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
   <<: *default
-  database: Raye7chalange_production
-  username: Raye7chalange
-  password: <%= ENV['RAYE7CHALANGE_DATABASE_PASSWORD'] %>
+   url: <%= ENV['DATABASE_URL'] %>
+  # database: Raye7chalange_production
+  # username: Raye7chalange
+  # password: <%= ENV['RAYE7CHALANGE_DATABASE_PASSWORD'] %>
